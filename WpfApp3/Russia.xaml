@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfApp3.Russia"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      Title="Russia">
+
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.7"/>
+                <GradientStop Color="Red" Offset="1"/>
+                <GradientStop Color="#FF2C28AF" Offset="0.825"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="190"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" Height="170" VerticalAlignment="Top"  AutoGenerateColumns="False" x:Name="dg" Background="White" Margin="0,20,0,0" SelectionChanged="dg_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Games}" Header="Всего игр" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Win}" Header="Победы" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Draw}" Header="Ничьи" Width="*"/>
+                <DataGridTextColumn Binding="{Binding lose}" Header="Поражения" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button   BorderBrush="Black"    Content="Назад"  Grid.Row="3" Margin="10,20,600,30" Click="Button_Click" Background="#FF8B88D3" FontWeight="Bold" FontSize="20"></Button>
+        <Button   BorderBrush="Black"    Content="Онлайн источник"  Grid.Row="3" Margin="600,20,10,30" Click="Button_Click_1" FontSize="20" FontWeight="Bold" Background="#FF8B88D3"></Button>
+        <TextBlock Grid.Row="1" Text="Статистика матчей" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Arial Black" FontSize="24" Foreground="Black"></TextBlock>
+
+    </Grid>
+</Page>
